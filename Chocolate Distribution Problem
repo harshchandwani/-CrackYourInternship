@@ -1,0 +1,19 @@
+//Chocolate Distribution Problem 
+
+class Solution{
+    public:
+    long long findMinDiff(vector<long long> arr, long long n, long long m){
+    //code
+       sort(arr.begin(), arr.end());
+       long long res= INT_MAX;
+       int start =0;
+       int end = m-1;
+      while(end <= n- 1){
+          long long diff = arr[end] - arr[start];
+          res = min(res, diff);
+          start++;
+          end++;
+      }
+       return res;
+    }   
+};
